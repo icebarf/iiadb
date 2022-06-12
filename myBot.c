@@ -1,3 +1,14 @@
+/*      This file is part of iiadb.
+
+    iiadb is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+    iiadb is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along with iiadb. If not, see
+   <https://www.gnu.org/licenses/>.  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,7 +33,7 @@ void cmd_ping(struct discord* client, const struct discord_message* msg)
     struct discord_create_message_params params = {.content = reply};
 
     code = discord_create_message(client, msg->channel_id, &params, NULL);
-    if(code != ORCA_OK)
+    if (code != ORCA_OK)
         log_info("bot: iiadb: discord_create_message did not return ORCA_OK in cmd_ping.");
 }
 
@@ -42,7 +53,7 @@ void cmd_about(struct discord* client, const struct discord_message* msg)
     struct discord_create_message_params params = {.embed = &eb};
 
     code = discord_create_message(client, msg->channel_id, &params, NULL);
-    if(code != ORCA_OK)
+    if (code != ORCA_OK)
         log_info("bot: iiadb: discord_create_message did not return ORCA_OK in cmd_about.");
 }
 
@@ -61,7 +72,7 @@ void cmd_list_commands(struct discord* client, const struct discord_message* msg
     struct discord_create_message_params params = {.embed = &eb};
 
     code = discord_create_message(client, msg->channel_id, &params, NULL);
-    if(code != ORCA_OK)
+    if (code != ORCA_OK)
         log_info("bot: iiadb: discord_create_message did not return ORCA_OK in cmd_list_commands.");
 }
 
@@ -79,7 +90,7 @@ void cmd_help(struct discord* client, const struct discord_message* msg)
     struct discord_create_message_params params = {.embed = &eb};
 
     code = discord_create_message(client, msg->channel_id, &params, NULL);
-    if(code != ORCA_OK)
+    if (code != ORCA_OK)
         log_info("bot: iiadb: discord_create_message did not return ORCA_OK in cmd_help.");
 }
 
