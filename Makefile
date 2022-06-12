@@ -28,7 +28,7 @@ LIBDIR := $(ORCA)/lib
 OBJDIR := obj
 
 # add your source files here
-SRC  := myBot.c
+SRC  := myBot.c commands.c
 # this will match each individual .c file to a .o
 OBJS := $(SRC:%.c=$(OBJDIR)/%.o)
 # your bot executable's name
@@ -42,7 +42,7 @@ CONF := config.json
 # -pthread tell the compiler to link the pthread library
 #  			aswell configure compilation for threads
 # -I add header folder to compiler search path
-CFLAGS  := -O0 -g -Wall -pthread                         \
+CFLAGS  := -O2 -g -Wall -pthread  					    \
            -I. -I$(ORCA) -I$(ORCA)/cee-utils             \
            -I$(ORCA)/common -I$(ORCA)/common/third-party
 
